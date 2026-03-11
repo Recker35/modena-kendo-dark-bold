@@ -37,6 +37,7 @@ export default function KendoSection() {
               alt="Kendo practice"
               className="w-full aspect-square object-cover"
             />
+            <div className="absolute inset-0 border border-primary/20" />
           </div>
         </div>
 
