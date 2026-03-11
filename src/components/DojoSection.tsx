@@ -52,13 +52,6 @@ export default function DojoSection() {
           </div>
         </div>
 
-        {/* Quote */}
-        <div className="text-center border-t border-border pt-12">
-          <p className="font-heading text-3xl md:text-4xl text-foreground/10 mb-2">交剣知愛</p>
-          <p className="text-muted-foreground italic text-lg">
-            "Attraverso l'incrocio delle spade, conosciamo l'amore"
-          </p>
-        </div>
       </div>
     </AnimatedSection>
   );
