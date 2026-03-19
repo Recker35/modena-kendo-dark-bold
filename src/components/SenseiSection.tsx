@@ -1,22 +1,17 @@
 import { AnimatedSection } from "./AnimatedSection";
 import { User } from "lucide-react";
 
-const members = [
-  {
-    name: "Marco Rossi",
-    role: "Sensei · 5° Dan",
-    bio: "Oltre 20 anni di esperienza nel Kendo. Istruttore certificato CIK e punto di riferimento per il club.",
-  },
-  {
-    name: "Alessandro Bianchi",
-    role: "Sempai · 3° Dan",
-    bio: "Praticante dal 2010, guida i nuovi membri con passione e dedizione nel percorso marziale.",
-  },
-  {
-    name: "Giulia Ferri",
-    role: "Sempai · 2° Dan",
-    bio: "Atleta competitiva e allenatrice, porta energia e precisione tecnica in ogni allenamento.",
-  },
+const sensei = {
+  name: "Stefano Verrina",
+  role: "Sensei",
+  detail: "6° Dan — 30 anni di esperienza",
+};
+
+const sempai = [
+  { name: "Luca Arletti", role: "Sempai", detail: "6° Dan" },
+  { name: "Danilo Zaccarelli", role: "Sempai — Presidente della Società", detail: "4° Dan" },
+  { name: "Manuela Dondi", role: "Sempai", detail: "4° Dan" },
+  { name: "Andrea Benni", role: "Sempai", detail: "4° Dan" },
 ];
 
 export default function SenseiSection() {
@@ -28,8 +23,23 @@ export default function SenseiSection() {
           SENSEI & SEMPAI
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {members.map((m) => (
+        {/* Sensei — prominent card */}
+        <div className="flex justify-center mb-10">
+          <div className="bg-card border border-border border-t-4 border-t-primary p-10 text-center max-w-md w-full">
+            <div className="w-28 h-28 rounded-full bg-secondary flex items-center justify-center mx-auto mb-6">
+              <User className="w-12 h-12 text-muted-foreground" />
+            </div>
+            <h3 className="font-heading text-2xl md:text-3xl text-foreground uppercase tracking-wider mb-1">
+              {sensei.name}
+            </h3>
+            <p className="text-primary text-sm font-medium mb-2">{sensei.role}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed">{sensei.detail}</p>
+          </div>
+        </div>
+
+        {/* Sempai grid */}
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {sempai.map((m) => (
             <div
               key={m.name}
               className="bg-card border border-border border-t-2 border-t-primary p-8 text-center"
@@ -40,8 +50,8 @@ export default function SenseiSection() {
               <h3 className="font-heading text-xl text-foreground uppercase tracking-wider mb-1">
                 {m.name}
               </h3>
-              <p className="text-primary text-sm font-medium mb-4">{m.role}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">{m.bio}</p>
+              <p className="text-primary text-sm font-medium mb-2">{m.role}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed">{m.detail}</p>
             </div>
           ))}
         </div>
