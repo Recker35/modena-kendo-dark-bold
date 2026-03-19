@@ -7,11 +7,11 @@ const sensei = {
   detail: "6° Dan — 30 anni di esperienza",
 };
 
-const sempai = [
-  { name: "Luca Arletti", role: "Sempai", detail: "6° Dan" },
-  { name: "Danilo Zaccarelli", role: "Sempai — Presidente della Società", detail: "4° Dan" },
-  { name: "Manuela Dondi", role: "Sempai", detail: "4° Dan" },
-  { name: "Andrea Benni", role: "Sempai", detail: "4° Dan" },
+const senpai = [
+  { name: "Luca Arletti", role: "Senpai", detail: "6° Dan" },
+  { name: "Danilo Zaccarelli", role: "Senpai — Presidente della Società", detail: "4° Dan" },
+  { name: "Manuela Dondi", role: "Senpai", detail: "4° Dan" },
+  { name: "Andrea Bennici", role: "Senpai", detail: "4° Dan" },
 ];
 
 export default function SenseiSection() {
