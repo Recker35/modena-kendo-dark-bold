@@ -33,7 +33,7 @@ export default function SenseiSection() {
               {sensei.name}
             </h3>
             <p className="text-primary text-sm font-medium mb-2">{sensei.role}</p>
-            <p className="text-muted-foreground text-sm leading-relaxed">{sensei.detail}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">{sensei.detail}</p>
           </div>
         </div>
 
