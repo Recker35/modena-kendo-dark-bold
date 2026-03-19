@@ -4,7 +4,7 @@ import { User } from "lucide-react";
 const sensei = {
   name: "Stefano Verrina",
   role: "Sensei",
-  detail: "6° Dan — 30 anni di esperienza",
+  detail: "6° Dan Renshi\ncon oltre 40 anni di esperienza",
 };
 
 const senpai = [
