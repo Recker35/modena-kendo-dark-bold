@@ -7,11 +7,11 @@ const sensei = {
   detail: "6° Dan — 30 anni di esperienza",
 };
 
-const sempai = [
-  { name: "Luca Arletti", role: "Sempai", detail: "6° Dan" },
-  { name: "Danilo Zaccarelli", role: "Sempai — Presidente della Società", detail: "4° Dan" },
-  { name: "Manuela Dondi", role: "Sempai", detail: "4° Dan" },
-  { name: "Andrea Benni", role: "Sempai", detail: "4° Dan" },
+const senpai = [
+  { name: "Luca Arletti", role: "Senpai", detail: "6° Dan" },
+  { name: "Danilo Zaccarelli", role: "Senpai — Presidente della Società", detail: "4° Dan" },
+  { name: "Manuela Dondi", role: "Senpai", detail: "4° Dan" },
+  { name: "Andrea Bennici", role: "Senpai", detail: "4° Dan" },
 ];
 
 export default function SenseiSection() {
@@ -20,7 +20,7 @@ export default function SenseiSection() {
       <div className="max-w-7xl mx-auto">
         <div className="red-divider mb-6" />
         <h2 className="heading-display text-4xl md:text-5xl text-foreground mb-12">
-          SENSEI & SEMPAI
+          SENSEI & SENPAI
         </h2>
 
         {/* Sensei — prominent card */}
@@ -37,9 +37,9 @@ export default function SenseiSection() {
           </div>
         </div>
 
-        {/* Sempai grid */}
+        {/* Senpai grid */}
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {sempai.map((m) => (
+          {senpai.map((m) => (
             <div
               key={m.name}
               className="bg-card border border-border border-t-2 border-t-primary p-8 text-center"
