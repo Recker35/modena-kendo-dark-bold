@@ -4,8 +4,8 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="Kendo action" className="w-full h-full object-cover" />
+      <div className="absolute inset-0 flex items-center justify-center bg-background">
+        <img src={heroImg} alt="Kendo action" className="w-full h-full object-contain sm:object-cover" />
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent" />
       </div>
 
