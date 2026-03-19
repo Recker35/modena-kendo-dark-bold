@@ -37,9 +37,9 @@ export default function SenseiSection() {
           </div>
         </div>
 
-        {/* Sempai grid */}
+        {/* Senpai grid */}
         <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {sempai.map((m) => (
+          {senpai.map((m) => (
             <div
               key={m.name}
               className="bg-card border border-border border-t-2 border-t-primary p-8 text-center"
