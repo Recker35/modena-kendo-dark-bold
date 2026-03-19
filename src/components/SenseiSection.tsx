@@ -20,7 +20,7 @@ export default function SenseiSection() {
       <div className="max-w-7xl mx-auto">
         <div className="red-divider mb-6" />
         <h2 className="heading-display text-4xl md:text-5xl text-foreground mb-12">
-          SENSEI & SEMPAI
+          SENSEI & SENPAI
         </h2>
 
         {/* Sensei — prominent card */}
