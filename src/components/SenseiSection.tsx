@@ -12,6 +12,7 @@ const senpai = [
   { name: "Danilo Zaccarelli", role: "Senpai — Presidente della Società", detail: "4° Dan" },
   { name: "Manuela Dondi", role: "Senpai", detail: "4° Dan" },
   { name: "Andrea Bennici", role: "Senpai", detail: "4° Dan" },
+  { name: "Luca Sandri", role: "Senpai", detail: "4° Dan" },
 ];
 
 export default function SenseiSection() {
