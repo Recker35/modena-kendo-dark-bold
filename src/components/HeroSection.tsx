@@ -6,7 +6,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 flex items-center justify-center bg-background">
         <img src={heroImg} alt="Kendo action" className="w-full h-full object-contain sm:object-cover" />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/80 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 to-transparent" />
       </div>
 
       {/* Kanji watermark */}
