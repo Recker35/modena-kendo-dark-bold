@@ -17,10 +17,10 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl">
         <div className="red-divider mx-auto mb-8" />
-        <h1 className="heading-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground leading-none mb-6">
+        <h1 className="heading-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-none mb-6">
           MODENA<br />KENDO CLUB
         </h1>
-        <p className="font-body text-lg md:text-xl text-muted-foreground mb-10 tracking-wide italic">
+        <p className="font-body text-lg md:text-xl text-white/80 mb-10 tracking-wide italic">
           L'arte della spada. La forza dello spirito.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
