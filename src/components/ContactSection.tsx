@@ -97,7 +97,7 @@ export default function ContactSection() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              style={{ filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
+              style={{}}
             />
           </div>
         </div>

@@ -32,7 +32,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#storia"
-            className="inline-block border border-foreground/30 text-foreground font-heading text-sm tracking-widest uppercase px-8 py-4 hover:border-primary hover:text-primary transition-colors"
+            className="inline-block border border-white/30 text-white font-heading text-sm tracking-widest uppercase px-8 py-4 hover:border-primary hover:text-primary transition-colors"
           >
             Scopri il Kendo
           </a>

@@ -9,7 +9,7 @@ const results = [
 
 export default function ResultsSection() {
   return (
-    <AnimatedSection id="risultati" className="section-padding relative overflow-hidden">
+    <AnimatedSection id="risultati" className="section-padding relative overflow-hidden bg-muted">
       <span className="kanji-watermark right-0 bottom-0 text-foreground">勝</span>
 
       <div className="max-w-7xl mx-auto">

@@ -2,7 +2,7 @@ import { Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-10 px-6">
+    <footer className="border-t border-border py-10 px-6 bg-muted">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-heading text-sm tracking-widest uppercase text-muted-foreground">
           © 2026 Modena Kendo Club
