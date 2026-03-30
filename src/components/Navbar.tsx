@@ -1,48 +1,44 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import mkcLogo from "@/assets/mkc-logo.jpeg";
 
 const navLinks = [
-  { label: "Il Kendo", href: "#storia" },
-  { label: "Il Dojo", href: "#dojo" },
-  { label: "Sensei", href: "#sensei" },
-  { label: "Risultati", href: "#risultati" },
-  { label: "Contatti", href: "#contatti" },
+  { label: "Kendo", to: "/kendo" },
+  { label: "Iaido", to: "/iaido" },
+  { label: "Il Dojo", to: "/dojo" },
+  { label: "Merch", to: "/merch" },
+  { label: "Contatti", to: "/contatti" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-sm shadow-md border-b border-border" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md shadow-md"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="flex items-center gap-3">
+      <div className="flex items-center justify-between px-6 py-4">
+        <NavLink to="/kendo" className="flex items-center gap-3">
           <img src={mkcLogo} alt="MKC Logo" className="h-10 w-auto rounded" />
           <span className="font-heading text-xl tracking-wider text-foreground uppercase hidden sm:block">
             MKC
           </span>
-        </a>
+        </NavLink>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="font-heading text-sm tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-200"
+            <NavLink
+              key={l.to}
+              to={l.to}
+              className={({ isActive }) =>
+                `font-heading text-sm tracking-widest uppercase transition-colors duration-200 ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                }`
+              }
             >
               {l.label}
-            </a>
+            </NavLink>
           ))}
         </div>
 
@@ -66,14 +62,18 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border px-6 pb-6">
           {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
+            <NavLink
+              key={l.to}
+              to={l.to}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 font-heading text-sm tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors"
+              className={({ isActive }) =>
+                `block py-3 font-heading text-sm tracking-widest uppercase transition-colors ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                }`
+              }
             >
               {l.label}
-            </a>
+            </NavLink>
           ))}
         </div>
       )}

@@ -1,5 +1,7 @@
+import { type RefObject, useEffect, useRef, useState } from "react";
 import { AnimatedSection } from "./AnimatedSection";
-import { User } from "lucide-react";
+import { ChevronLeft, ChevronRight, User, Instagram } from "lucide-react";
+import HoverableTitleDivider from "./HoverableTitleDivider";
 
 const sensei = {
   name: "Stefano Verrina",
@@ -8,53 +10,217 @@ const sensei = {
 };
 
 const senpai = [
-  { name: "Luca Arletti GAY", role: "Senpai", detail: "6° Dan" },
-  { name: "Danilo Zaccarelli", role: "Senpai — Presidente della Società", detail: "4° Dan" },
-  { name: "Manuela Dondi", role: "Senpai", detail: "4° Dan" },
-  { name: "Andrea Bennici", role: "Senpai", detail: "4° Dan" },
-  { name: "Luca Sandri", role: "Senpai", detail: "4° Dan" },
+  { name: "Luca Arletti", role: "Senpai", detail: "6° Dan", showInstagram: false },
+  { name: "Danilo Zaccarelli", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true },
+  { name: "Manuela Dondi", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Andrea Bennici", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Luca Sandri", role: "Senpai", detail: "4° Dan", showInstagram: true },
+];
+
+const competitors = [
+  { name: "Luca Arletti", grade: "6° Dan", results: "", showInstagram: false },
+  { name: "Samuele Petraz", grade: "2° Dan", results: "3° posto Campionati italiani maschili 🥉", showInstagram: true },
+  { name: "Beatrice Muscio", grade: "2° Dan", results: "3° posto Campionati italiani femminili 🥉", showInstagram: true },
+  { name: "Matteo Galanti", grade: "1° Dan", results: "", showInstagram: true },
+  { name: "Giorgio Ongaro", grade: "2° Kyu", results: "", showInstagram: true },
+  { name: "Andrea Bennici", grade: "4° Dan", results: "", showInstagram: true },
+  { name: "Francesca Carboni", grade: "3° Dan", results: "", showInstagram: true },
+  { name: "Giovanni Faraguti", grade: "2° Dan", results: "", showInstagram: true },
+  { name: "Riccardo Mazzi", grade: "1° Dan", results: "", showInstagram: true },
 ];
 
 export default function SenseiSection() {
-  return (
-    <AnimatedSection id="sensei" className="section-padding">
-      <div className="max-w-7xl mx-auto">
-        <div className="red-divider mb-6" />
-        <h2 className="heading-display text-4xl md:text-5xl text-foreground mb-12">
-          SENSEI & SENPAI
-        </h2>
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const competitorsScrollRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
+  const [senseiArrows, setSenseiArrows] = useState({ canLeft: false, canRight: true });
+  const [competitorsArrows, setCompetitorsArrows] = useState({ canLeft: false, canRight: true });
 
-        {/* Sensei — prominent card */}
-        <div className="flex justify-center mb-10">
-          <div className="bg-card border border-border border-t-4 border-t-primary p-10 text-center max-w-md w-full">
-            <div className="w-28 h-28 rounded-full bg-secondary flex items-center justify-center mx-auto mb-6">
-              <User className="w-12 h-12 text-muted-foreground" />
+  const updateArrowState = (
+    targetRef: RefObject<HTMLDivElement | null>,
+    setState: (value: { canLeft: boolean; canRight: boolean }) => void,
+  ) => {
+    if (!targetRef.current) return;
+
+    const { scrollLeft, clientWidth, scrollWidth } = targetRef.current;
+    const canLeft = scrollLeft > 1;
+    const canRight = scrollLeft + clientWidth < scrollWidth - 1;
+    setState({ canLeft, canRight });
+  };
+
+  const scrollCards = (targetRef: RefObject<HTMLDivElement | null>, direction: "left" | "right") => {
+    if (!targetRef.current) return;
+
+    const amount = Math.round(targetRef.current.clientWidth * 0.75);
+    targetRef.current.scrollBy({
+      left: direction === "right" ? amount : -amount,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const updateAll = () => {
+      updateArrowState(scrollRef, setSenseiArrows);
+      updateArrowState(competitorsScrollRef, setCompetitorsArrows);
+    };
+
+    updateAll();
+    window.addEventListener("resize", updateAll);
+    return () => window.removeEventListener("resize", updateAll);
+  }, []);
+
+  return (
+    <AnimatedSection id="sensei" className="section-padding pt-2 md:pt-4 pb-10 md:pb-14">
+      <div className="max-w-7xl mx-auto" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+        <HoverableTitleDivider title="SENSEI & SENPAI" isExternalHovering={isHovering} />
+
+        <div className="relative">
+          {senseiArrows.canLeft && (
+            <button
+              type="button"
+              onClick={() => scrollCards(scrollRef, "left")}
+              aria-label="Scorri a sinistra"
+              className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-background/90 p-2 shadow-sm backdrop-blur-sm transition hover:bg-background"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+          )}
+
+          <div
+            ref={scrollRef}
+            onScroll={() => updateArrowState(scrollRef, setSenseiArrows)}
+            className="hide-scrollbar overflow-x-auto scroll-smooth"
+          >
+            <div className="flex w-max gap-6 px-10">
+              <div className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4">
+                <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground">
+                  <User className="h-16 w-16" />
+                </div>
+                <div className="p-3 text-center">
+                  <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                    {sensei.name}
+                  </h3>
+                  <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-bold leading-tight text-primary">
+                    {sensei.role}
+                  </p>
+                  <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                    {sensei.detail}
+                  </p>
+                </div>
+              </div>
+
+              {senpai.map((m) => (
+                <div
+                  key={m.name}
+                  className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
+                >
+                  <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
+                    {m.showInstagram && (
+                      <a
+                        href="https://instagram.com/modenakendo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute top-3 left-3 z-10 text-white/60 hover:text-white transition-colors"
+                      >
+                        <Instagram className="w-5 h-5" />
+                      </a>
+                    )}
+                    <User className="h-16 w-16" />
+                  </div>
+                  <div className="p-3 text-center">
+                    <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                      {m.name}
+                    </h3>
+                    <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
+                      {m.role}
+                    </p>
+                    <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                      {m.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <h3 className="font-heading text-2xl md:text-3xl text-foreground uppercase tracking-wider mb-1">
-              {sensei.name}
-            </h3>
-            <p className="text-primary text-sm font-medium mb-2">{sensei.role}</p>
-            <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">{sensei.detail}</p>
           </div>
+
+          {senseiArrows.canRight && (
+            <button
+              type="button"
+              onClick={() => scrollCards(scrollRef, "right")}
+              aria-label="Scorri a destra"
+              className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-background/90 p-2 shadow-sm backdrop-blur-sm transition hover:bg-background"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          )}
         </div>
 
-        {/* Senpai grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {senpai.map((m) => (
+        <div className="mt-20">
+          <HoverableTitleDivider title="COMPETITORS" isExternalHovering={isHovering} />
+
+          <div className="relative">
+            {competitorsArrows.canLeft && (
+              <button
+                type="button"
+                onClick={() => scrollCards(competitorsScrollRef, "left")}
+                aria-label="Scorri competitors a sinistra"
+                className="absolute left-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-background/90 p-2 shadow-sm backdrop-blur-sm transition hover:bg-background"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+            )}
+
             <div
-              key={m.name}
-              className="bg-card border border-border border-t-2 border-t-primary p-8 text-center"
+              ref={competitorsScrollRef}
+              onScroll={() => updateArrowState(competitorsScrollRef, setCompetitorsArrows)}
+              className="hide-scrollbar overflow-x-auto scroll-smooth"
             >
-              <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center mx-auto mb-6">
-                <User className="w-10 h-10 text-muted-foreground" />
+              <div className="flex w-max gap-6 px-10">
+                {competitors.map((c, index) => (
+                  <div
+                    key={`${c.name}-${index}`}
+                    className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
+                  >
+                    <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
+                      {c.showInstagram && (
+                        <a
+                          href="https://instagram.com/modenakendo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute top-3 left-3 z-10 text-white/60 hover:text-white transition-colors"
+                        >
+                          <Instagram className="w-5 h-5" />
+                        </a>
+                      )}
+                      <User className="h-16 w-16" />
+                    </div>
+                    <div className="p-3 text-center">
+                      <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                        {c.name}
+                      </h3>
+                      <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
+                        {c.grade}
+                      </p>
+                      <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                        {c.results}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <h3 className="font-heading text-xl text-foreground uppercase tracking-wider mb-1">
-                {m.name}
-              </h3>
-              <p className="text-primary text-sm font-medium mb-2">{m.role}</p>
-              <p className="text-muted-foreground text-sm leading-relaxed">{m.detail}</p>
             </div>
-          ))}
+
+            {competitorsArrows.canRight && (
+              <button
+                type="button"
+                onClick={() => scrollCards(competitorsScrollRef, "right")}
+                aria-label="Scorri competitors a destra"
+                className="absolute right-0 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border bg-background/90 p-2 shadow-sm backdrop-blur-sm transition hover:bg-background"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </AnimatedSection>

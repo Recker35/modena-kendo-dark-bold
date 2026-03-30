@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import KendoSection from "@/components/KendoSection";
-import DojoSection from "@/components/DojoSection";
 import SenseiSection from "@/components/SenseiSection";
 import ResultsSection from "@/components/ResultsSection";
-import ContactSection from "@/components/ContactSection";
+import JunioresSection from "@/components/JunioresSection";
+import KendoValuesSection from "@/components/KendoValuesSection";
+import ShuhariSection from "@/components/ShuhariSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,10 +14,11 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <KendoSection />
-      <DojoSection />
       <SenseiSection />
       <ResultsSection />
-      <ContactSection />
+      <JunioresSection />
+      <KendoValuesSection />
+      <ShuhariSection />
       <Footer />
     </div>
   );

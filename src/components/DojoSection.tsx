@@ -51,38 +51,6 @@ export default function DojoSection() {
             </p>
           </div>
         </div>
-
-        {/* Shuhari */}
-        <div className="text-center border-t border-border pt-12">
-          <p className="font-heading text-5xl md:text-6xl text-foreground mb-2">守破離</p>
-          <h3 className="font-heading text-2xl md:text-3xl text-foreground uppercase tracking-widest mb-3">
-            Shuhari
-          </h3>
-          <p className="text-primary italic text-lg mb-10">
-            "Il percorso del praticante"
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { kanji: "守", title: "Shu", desc: "Seguire le regole.\nImparare la forma tradizionale con disciplina e rispetto." },
-              { kanji: "破", title: "Ha", desc: "Rompere le regole.\nComprendere il principio dietro la forma e iniziare a trovare la propria via." },
-              { kanji: "離", title: "Ri", desc: "Trascendere le regole.\nLa tecnica diventa istinto. La forma e il praticante sono una cosa sola." },
-            ].map((card) => (
-              <div
-                key={card.title}
-                className="bg-card border-t-2 border-primary border-b border-l border-r border-b-border border-l-border border-r-border p-8 text-center"
-              >
-                <span className="block font-heading text-5xl text-primary mb-3">{card.kanji}</span>
-                <h4 className="font-heading text-xl text-foreground uppercase tracking-wider mb-4">
-                  {card.title}
-                </h4>
-                <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </AnimatedSection>
   );

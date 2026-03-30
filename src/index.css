@@ -75,12 +75,26 @@
     @apply uppercase tracking-wider font-bold;
   }
 
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .red-divider {
-    @apply w-16 h-0.5 bg-primary;
+    @apply h-0.5 bg-primary transition-all duration-500;
+    width: 4rem;
   }
 
   .red-divider-wide {
     @apply w-32 h-0.5 bg-primary;
+  }
+
+  .red-divider-dynamic {
+    @apply h-1 bg-primary transition-all duration-500;
   }
 
   .section-padding {
