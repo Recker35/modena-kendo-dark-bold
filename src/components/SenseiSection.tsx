@@ -5,28 +5,29 @@ import HoverableTitleDivider from "./HoverableTitleDivider";
 
 const sensei = {
   name: "Stefano Verrina",
+  katakana: "ステファノ・ヴェッリーナ",
   role: "Sensei",
   detail: "6° Dan Renshi\ncon oltre 40 anni di esperienza",
 };
 
 const senpai = [
-  { name: "Luca Arletti", role: "Senpai", detail: "6° Dan", showInstagram: false },
-  { name: "Danilo Zaccarelli", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true },
-  { name: "Manuela Dondi", role: "Senpai", detail: "4° Dan", showInstagram: true },
-  { name: "Andrea Bennici", role: "Senpai", detail: "4° Dan", showInstagram: true },
-  { name: "Luca Sandri", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Luca Arletti", katakana: "ルカ・アルレッティ", role: "Senpai", detail: "6° Dan", showInstagram: false },
+  { name: "Danilo Zaccarelli", katakana: "ダニーロ・ザッカレッリ", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true },
+  { name: "Manuela Dondi", katakana: "マヌエラ・ドンディ", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Luca Sandri", katakana: "ルカ・サンドリ", role: "Senpai", detail: "4° Dan", showInstagram: true },
 ];
 
 const competitors = [
-  { name: "Luca Arletti", grade: "6° Dan", results: "", showInstagram: false },
-  { name: "Samuele Petraz", grade: "2° Dan", results: "3° posto Campionati italiani maschili 🥉", showInstagram: true },
-  { name: "Beatrice Muscio", grade: "2° Dan", results: "3° posto Campionati italiani femminili 🥉", showInstagram: true },
-  { name: "Matteo Galanti", grade: "1° Dan", results: "", showInstagram: true },
-  { name: "Giorgio Ongaro", grade: "2° Kyu", results: "", showInstagram: true },
-  { name: "Andrea Bennici", grade: "4° Dan", results: "", showInstagram: true },
-  { name: "Francesca Carboni", grade: "3° Dan", results: "", showInstagram: true },
-  { name: "Giovanni Faraguti", grade: "2° Dan", results: "", showInstagram: true },
-  { name: "Riccardo Mazzi", grade: "1° Dan", results: "", showInstagram: true },
+  { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false },
+  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 🥉", showInstagram: true },
+  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 🥉", showInstagram: true },
+  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true },
+  { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "", showInstagram: true },
+  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true },
+  { name: "Francesca Carboni", katakana: "フランチェスカ・カルボーニ", grade: "3° Dan", results: "", showInstagram: true },
+  { name: "Giovanni Faraguti", katakana: "ジョヴァンニ・ファラグーティ", grade: "2° Dan", results: "", showInstagram: true },
+  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "1° Dan", results: "", showInstagram: true },
 ];
 
 export default function SenseiSection() {
@@ -92,8 +93,13 @@ export default function SenseiSection() {
             className="hide-scrollbar overflow-x-auto scroll-smooth"
           >
             <div className="flex w-max gap-6 px-10">
-              <div className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4">
-                <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground">
+              <div className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4">
+                <div className="relative flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground">
+                  <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
+                    <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
+                      {sensei.katakana}
+                    </span>
+                  </div>
                   <User className="h-16 w-16" />
                 </div>
                 <div className="p-3 text-center">
@@ -112,9 +118,14 @@ export default function SenseiSection() {
               {senpai.map((m) => (
                 <div
                   key={m.name}
-                  className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
+                  className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
                 >
                   <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
+                    <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
+                      <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
+                        {m.katakana}
+                      </span>
+                    </div>
                     {m.showInstagram && (
                       <a
                         href="https://instagram.com/modenakendo"
@@ -179,9 +190,14 @@ export default function SenseiSection() {
                 {competitors.map((c, index) => (
                   <div
                     key={`${c.name}-${index}`}
-                    className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
+                    className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
                   >
                     <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
+                      <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
+                        <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
+                          {c.katakana}
+                        </span>
+                      </div>
                       {c.showInstagram && (
                         <a
                           href="https://instagram.com/modenakendo"
