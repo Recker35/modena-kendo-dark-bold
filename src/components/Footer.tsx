@@ -20,7 +20,7 @@ export default function Footer() {
             <FaInstagram className="w-5 h-5 md:w-6 md:h-6" />
           </a>
           <a
-            href="https://facebook.com/modenakendo"
+            href="https://www.facebook.com/ModenaKendoClub"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors duration-200"

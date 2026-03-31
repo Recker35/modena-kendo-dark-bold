@@ -22,7 +22,7 @@ export default function HeroSection() {
           MODENA<br />KENDO CLUB
         </h1>
         <p className="font-body text-lg md:text-xl text-white/80 mb-10 tracking-wide italic">
-          L'arte della spada. La forza dello spirito.
+          La Via della Spada Giapponese a Modena
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link

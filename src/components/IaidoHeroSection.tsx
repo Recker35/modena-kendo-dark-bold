@@ -19,7 +19,7 @@ export default function IaidoHeroSection() {
           KENDO CLUB
         </h1>
         <p className="font-body text-lg md:text-xl text-white/80 mb-10 tracking-wide italic">
-          Precisione, presenza, disciplina.
+          La Via della Spada Giapponese a Modena
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
