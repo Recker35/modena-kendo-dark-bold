@@ -60,6 +60,16 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Instagram real posts setup
+
+To show real latest Instagram posts in the Dojo page, add this variable in a `.env` file at project root:
+
+```sh
+VITE_INSTAGRAM_ACCESS_TOKEN=your_long_lived_instagram_token
+```
+
+Then restart the dev server.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
