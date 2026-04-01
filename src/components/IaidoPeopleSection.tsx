@@ -74,17 +74,17 @@ export default function IaidoPeopleSection() {
                   key={`iaido-sensei-empty-${index}`}
                   className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4"
                 >
-                  <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground">
+                  <div className="flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground">
                     <User className="h-16 w-16" />
                   </div>
-                  <div className="p-3 text-center">
-                    <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                  <div className="px-3 py-2 text-center">
+                    <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
                       &nbsp;
                     </h3>
-                    <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
+                    <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
                       &nbsp;
                     </p>
-                    <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                    <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
                       &nbsp;
                     </p>
                   </div>
@@ -131,17 +131,17 @@ export default function IaidoPeopleSection() {
                     key={`iaido-competitor-empty-${index}`}
                     className="w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4"
                   >
-                    <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground">
+                    <div className="flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground">
                       <User className="h-16 w-16" />
                     </div>
-                    <div className="p-3 text-center">
-                      <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                    <div className="px-3 py-2 text-center">
+                      <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
                         &nbsp;
                       </h3>
-                      <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
+                      <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
                         &nbsp;
                       </p>
-                      <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                      <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
                         &nbsp;
                       </p>
                     </div>

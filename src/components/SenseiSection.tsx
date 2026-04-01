@@ -20,8 +20,8 @@ const senpai = [
 
 const competitors = [
   { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false },
-  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 🥉", showInstagram: true },
-  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 🥉", showInstagram: true },
+  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true },
+  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true },
   { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true },
   { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "", showInstagram: true },
   { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true },
@@ -94,7 +94,7 @@ export default function SenseiSection() {
           >
             <div className="flex w-max gap-6 px-10">
               <div className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4">
-                <div className="relative flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground">
+                <div className="relative flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground">
                   <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
                     <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
                       {sensei.katakana}
@@ -102,14 +102,14 @@ export default function SenseiSection() {
                   </div>
                   <User className="h-16 w-16" />
                 </div>
-                <div className="p-3 text-center">
-                  <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                <div className="px-3 py-2 text-center">
+                  <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
                     {sensei.name}
                   </h3>
-                  <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-bold leading-tight text-primary">
+                  <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-bold leading-tight text-primary">
                     {sensei.role}
                   </p>
-                  <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                  <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
                     {sensei.detail}
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export default function SenseiSection() {
                   key={m.name}
                   className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
                 >
-                  <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
+                  <div className="flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
                     <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
                       <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
                         {m.katakana}
@@ -138,14 +138,14 @@ export default function SenseiSection() {
                     )}
                     <User className="h-16 w-16" />
                   </div>
-                  <div className="p-3 text-center">
-                    <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                  <div className="px-3 py-2 text-center">
+                    <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
                       {m.name}
                     </h3>
-                    <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
+                    <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
                       {m.role}
                     </p>
-                    <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                    <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
                       {m.detail}
                     </p>
                   </div>
@@ -192,7 +192,7 @@ export default function SenseiSection() {
                     key={`${c.name}-${index}`}
                     className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
                   >
-                    <div className="flex h-[330px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
+                    <div className="flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
                       <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
                         <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
                           {c.katakana}
@@ -210,14 +210,14 @@ export default function SenseiSection() {
                       )}
                       <User className="h-16 w-16" />
                     </div>
-                    <div className="p-3 text-center">
-                      <h3 className="flex h-9 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
+                    <div className="px-3 py-2 text-center">
+                      <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
                         {c.name}
                       </h3>
-                      <p className="flex h-7 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
+                      <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
                         {c.grade}
                       </p>
-                      <p className="flex h-9 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                      <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
                         {c.results}
                       </p>
                     </div>
