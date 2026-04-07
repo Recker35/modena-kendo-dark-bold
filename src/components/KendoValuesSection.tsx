@@ -3,8 +3,8 @@ import { Shield, Zap, Swords, Heart } from "lucide-react";
 
 const values = [
   { icon: Heart, kanji: "礼", title: "Rei", subtitle: "Rispetto" },
-  { icon: Zap, kanji: "気", title: "Ki", subtitle: "Energia" },
-  { icon: Swords, kanji: "剣", title: "Ken", subtitle: "Tecnica" },
+  { icon: Zap, kanji: "気", title: "Ki", subtitle: "Spirito" },
+  { icon: Swords, kanji: "剣", title: "Ken", subtitle: "Spada" },
   { icon: Shield, kanji: "体", title: "Tai", subtitle: "Corpo" },
 ];
 

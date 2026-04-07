@@ -71,7 +71,8 @@ export default function SenseiSection() {
   }, []);
 
   return (
-    <AnimatedSection id="sensei" className="section-padding pt-2 md:pt-4 pb-10 md:pb-14">
+    <AnimatedSection id="sensei" className="section-padding pt-2 md:pt-4 pb-10 md:pb-14 relative overflow-visible">
+      <span className="kanji-watermark -left-4 top-[44rem] text-foreground">試合</span>
       <div className="max-w-7xl mx-auto" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
         <HoverableTitleDivider title="SENSEI & SENPAI" isExternalHovering={isHovering} />
 

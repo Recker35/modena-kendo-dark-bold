@@ -1,10 +1,11 @@
 import { AnimatedSection } from "./AnimatedSection";
 import dojoStoryImg from "@/assets/hero-kendo.jpg";
 import missionImg from "@/assets/kendo-atmosphere.jpg";
+import HoverableTitleDivider from "./HoverableTitleDivider";
 
 export default function DojoStoryMissionSection() {
   return (
-    <AnimatedSection className="section-padding pt-8 md:pt-12 pb-4 md:pb-8 relative overflow-hidden">
+    <AnimatedSection className="section-padding pt-8 md:pt-12 pb-2 md:pb-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto space-y-14 md:space-y-20">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="relative order-1">
@@ -29,8 +30,7 @@ export default function DojoStoryMissionSection() {
 
         <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div className="order-2 md:order-1">
-            <div className="red-divider mb-6" />
-            <h2 className="heading-display text-3xl md:text-4xl text-foreground mb-6">MISSION</h2>
+            <HoverableTitleDivider title="MISSION" className="text-3xl md:text-4xl mb-6" />
             <p className="text-muted-foreground leading-relaxed mb-4">
               La nostra missione e formare praticanti consapevoli, trasmettendo il Kendo come via educativa
               prima ancora che agonistica. Curare tecnica e spirito significa costruire carattere, autocontrollo
