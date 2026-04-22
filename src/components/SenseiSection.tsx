@@ -2,6 +2,13 @@ import { type RefObject, useEffect, useRef, useState } from "react";
 import { AnimatedSection } from "./AnimatedSection";
 import { ChevronLeft, ChevronRight, User, Instagram } from "lucide-react";
 import HoverableTitleDivider from "./HoverableTitleDivider";
+import arlettiImg from "@/assets/people/arletti-card.jpg";
+import benniciImg from "@/assets/people/bennici-card.jpg";
+import dondiImg from "@/assets/people/dondi-card.jpg";
+import faragutiImg from "@/assets/people/faraguti-card.jpg";
+import galantiImg from "@/assets/people/galanti-card.jpg";
+import mazziImg from "@/assets/people/mazzi-card.jpg";
+import muscioImg from "@/assets/people/muscio-card.jpg";
 
 const sensei = {
   name: "Stefano Verrina",
@@ -11,23 +18,23 @@ const sensei = {
 };
 
 const senpai = [
-  { name: "Luca Arletti", katakana: "ルカ・アルレッティ", role: "Senpai", detail: "6° Dan", showInstagram: false },
+  { name: "Luca Arletti", katakana: "ルカ・アルレッティ", role: "Senpai", detail: "6° Dan", showInstagram: false, image: arlettiImg },
   { name: "Danilo Zaccarelli", katakana: "ダニーロ・ザッカレッリ", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true },
-  { name: "Manuela Dondi", katakana: "マヌエラ・ドンディ", role: "Senpai", detail: "4° Dan", showInstagram: true },
-  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Manuela Dondi", katakana: "マヌエラ・ドンディ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: dondiImg },
+  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: benniciImg },
   { name: "Luca Sandri", katakana: "ルカ・サンドリ", role: "Senpai", detail: "4° Dan", showInstagram: true },
 ];
 
 const competitors = [
-  { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false },
+  { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false, image: arlettiImg },
   { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true },
-  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true },
-  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true },
+  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true, image: muscioImg },
+  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true, image: galantiImg },
   { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "", showInstagram: true },
-  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true },
+  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true, image: benniciImg },
   { name: "Francesca Carboni", katakana: "フランチェスカ・カルボーニ", grade: "3° Dan", results: "", showInstagram: true },
-  { name: "Giovanni Faraguti", katakana: "ジョヴァンニ・ファラグーティ", grade: "2° Dan", results: "", showInstagram: true },
-  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "1° Dan", results: "", showInstagram: true },
+  { name: "Giovanni Faraguti", katakana: "ジョヴァンニ・ファラグーティ", grade: "2° Dan", results: "", showInstagram: true, image: faragutiImg },
+  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "1° Dan", results: "", showInstagram: true, image: mazziImg },
 ];
 
 export default function SenseiSection() {
@@ -122,22 +129,35 @@ export default function SenseiSection() {
                   className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
                 >
                   <div className="flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
-                    <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
-                      <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
-                        {m.katakana}
-                      </span>
+                    <div className="absolute right-0 top-0 z-10 flex flex-col items-center">
+                      <div className="inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
+                        <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
+                          {m.katakana}
+                        </span>
+                      </div>
+                      {m.showInstagram && (
+                        <a
+                          href="https://instagram.com/modenakendo"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-2 text-white/70 hover:text-red-500/80 transition-colors"
+                        >
+                          <Instagram className="w-5 h-5" />
+                        </a>
+                      )}
                     </div>
-                    {m.showInstagram && (
-                      <a
-                        href="https://instagram.com/modenakendo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-3 left-3 z-10 text-white/60 hover:text-white transition-colors"
-                      >
-                        <Instagram className="w-5 h-5" />
-                      </a>
+                    {m.image ? (
+                      <img
+                        src={m.image}
+                        alt={m.name}
+                        loading="lazy"
+                        decoding="async"
+                        draggable={false}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <User className="h-16 w-16" />
                     )}
-                    <User className="h-16 w-16" />
                   </div>
                   <div className="px-3 py-2 text-center">
                     <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
@@ -194,22 +214,35 @@ export default function SenseiSection() {
                     className="group w-64 min-h-[430px] overflow-hidden border border-border border-t-2 border-t-primary bg-card transition-all duration-300 hover:border-primary hover:border-t-4 relative"
                   >
                     <div className="flex h-[342px] w-full items-center justify-center bg-secondary text-muted-foreground relative">
-                      <div className="absolute right-0 top-0 z-10 inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
-                        <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
-                          {c.katakana}
-                        </span>
+                      <div className="absolute right-0 top-0 z-10 flex flex-col items-center">
+                        <div className="inline-flex items-center justify-center bg-white px-1.5 py-1 shadow-sm">
+                          <span className="whitespace-nowrap text-[15px] font-semibold tracking-[0.04em] leading-none text-black transition-colors duration-300 group-hover:text-red-600 [writing-mode:vertical-rl] [text-orientation:upright]">
+                            {c.katakana}
+                          </span>
+                        </div>
+                        {c.showInstagram && (
+                          <a
+                            href="https://instagram.com/modenakendo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-2 text-white/70 hover:text-red-500/80 transition-colors"
+                          >
+                            <Instagram className="w-5 h-5" />
+                          </a>
+                        )}
                       </div>
-                      {c.showInstagram && (
-                        <a
-                          href="https://instagram.com/modenakendo"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute top-3 left-3 z-10 text-white/60 hover:text-white transition-colors"
-                        >
-                          <Instagram className="w-5 h-5" />
-                        </a>
+                      {c.image ? (
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          loading="lazy"
+                          decoding="async"
+                          draggable={false}
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <User className="h-16 w-16" />
                       )}
-                      <User className="h-16 w-16" />
                     </div>
                     <div className="px-3 py-2 text-center">
                       <h3 className="flex h-8 items-start justify-center overflow-hidden break-words font-heading text-xl uppercase tracking-wider leading-tight text-foreground">
