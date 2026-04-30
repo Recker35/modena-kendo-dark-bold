@@ -9,6 +9,8 @@ import faragutiImg from "@/assets/people/faraguti-card.jpg";
 import galantiImg from "@/assets/people/galanti-card.jpg";
 import mazziImg from "@/assets/people/mazzi-card.jpg";
 import muscioImg from "@/assets/people/muscio-card.jpg";
+import petrazImg from "@/assets/people/petraz-card.jpg";
+import zaccarelliImg from "@/assets/people/zaccarelli-card.jpg";
 
 const sensei = {
   name: "Stefano Verrina",
@@ -19,15 +21,15 @@ const sensei = {
 
 const senpai = [
   { name: "Luca Arletti", katakana: "ルカ・アルレッティ", role: "Senpai", detail: "6° Dan", showInstagram: false, image: arlettiImg },
-  { name: "Danilo Zaccarelli", katakana: "ダニーロ・ザッカレッリ", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true },
+  { name: "Luca Sandri", katakana: "ルカ・サンドリ", role: "Senpai", detail: "4° Dan", showInstagram: true },
   { name: "Manuela Dondi", katakana: "マヌエラ・ドンディ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: dondiImg },
   { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: benniciImg },
-  { name: "Luca Sandri", katakana: "ルカ・サンドリ", role: "Senpai", detail: "4° Dan", showInstagram: true },
+  { name: "Danilo Zaccarelli", katakana: "ダニーロ・ザッカレッリ", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true, image: zaccarelliImg },
 ];
 
 const competitors = [
   { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false, image: arlettiImg },
-  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true },
+  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true, image: petrazImg },
   { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true, image: muscioImg },
   { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true, image: galantiImg },
   { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "", showInstagram: true },
