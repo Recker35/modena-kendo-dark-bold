@@ -3,10 +3,11 @@ import { AnimatedSection } from "./AnimatedSection";
 import HoverableTitleDivider from "./HoverableTitleDivider";
 
 const results = [
+  { emoji: "🥇", title: "1° posto — Gara Individuale Kyu Maschile", athlete: "Giorgio Ongaro" },
   { emoji: "🥉", title: "3° posto — Gara Individuale Maschile", athlete: "Samuele Petraz" },
-  { emoji: "🥉", title: "3° posto — Gara Individuale Femminile", athlete: "Beatrice Muscio" },
-  { emoji: "⚔️", title: "Fighting Spirit — Gara Individuale", athlete: "Beatrice Muscio" },
   { emoji: "⚔️", title: "Fighting Spirit — Gara a Squadre", athlete: "Samuele Petraz" },
+  { emoji: "🥉", title: "3° posto — Gara Individuale Femminile", athlete: "Beatrice Muscio" },
+  { emoji: "⚔️", title: "Fighting Spirit — Gara Individuale Femminile", athlete: "Beatrice Muscio" },
 ];
 
 export default function ResultsSection() {
@@ -26,7 +27,9 @@ export default function ResultsSection() {
           {results.map((r, i) => (
             <div
               key={i}
-              className="bg-card border border-border p-6 flex gap-6 items-start group hover:border-primary/40 transition-colors"
+              className={`bg-card border border-border p-6 flex gap-6 items-start group hover:border-primary/40 transition-colors ${
+                i === 0 ? "md:col-span-2" : ""
+              }`}
             >
               <div className="text-5xl">{r.emoji}</div>
               <div>

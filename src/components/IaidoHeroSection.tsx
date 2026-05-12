@@ -22,18 +22,18 @@ export default function IaidoHeroSection() {
           La Via della Spada Giapponese a Modena
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#iaido"
-            className="inline-block bg-primary text-primary-foreground font-heading text-sm tracking-widest uppercase px-8 py-4 border-2 border-primary transition-all duration-300 hover:bg-white hover:text-primary hover:border-white"
-          >
-            Scopri lo Iaido
-          </a>
           <Link
             to="/contatti"
-            className="inline-block border border-white/30 text-white font-heading text-sm tracking-widest uppercase px-8 py-4 hover:border-primary hover:text-primary transition-colors"
+            className="inline-block bg-primary text-primary-foreground font-heading text-sm tracking-widest uppercase px-8 py-4 border-2 border-primary transition-all duration-300 hover:bg-white hover:text-primary hover:border-white"
           >
             Inizia ad allenarti
           </Link>
+          <a
+            href="#iaido"
+            className="inline-block border border-white/30 text-white font-heading text-sm tracking-widest uppercase px-8 py-4 hover:border-primary hover:text-primary transition-colors"
+          >
+            Scopri lo Iaido
+          </a>
         </div>
       </div>
     </section>

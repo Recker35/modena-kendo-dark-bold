@@ -10,6 +10,7 @@ import galantiImg from "@/assets/people/galanti-card.jpg";
 import mazziImg from "@/assets/people/mazzi-card.jpg";
 import muscioImg from "@/assets/people/muscio-card.jpg";
 import petrazImg from "@/assets/people/petraz-card.jpg";
+import sandriImg from "@/assets/people/sandri-card.jpg";
 import zaccarelliImg from "@/assets/people/zaccarelli-card.jpg";
 
 const sensei = {
@@ -17,26 +18,28 @@ const sensei = {
   katakana: "ステファノ・ヴェッリーナ",
   role: "Sensei",
   detail: "6° Dan Renshi\ncon oltre 40 anni di esperienza",
+  raiseDetail: true,
 };
 
 const senpai = [
   { name: "Luca Arletti", katakana: "ルカ・アルレッティ", role: "Senpai", detail: "6° Dan", showInstagram: false, image: arlettiImg },
-  { name: "Luca Sandri", katakana: "ルカ・サンドリ", role: "Senpai", detail: "4° Dan", showInstagram: true },
-  { name: "Manuela Dondi", katakana: "マヌエラ・ドンディ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: dondiImg },
-  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: benniciImg },
-  { name: "Danilo Zaccarelli", katakana: "ダニーロ・ザッカレッリ", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true, image: zaccarelliImg },
+  { name: "Luca Sandri", katakana: "ルカ・サンドリ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: sandriImg, instagram: "https://www.instagram.com/lucasandroun?igsh=MWVzcXFycGU3Z2F0Ng==" },
+  { name: "Manuela Dondi", katakana: "マヌエラ・ドンディ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: dondiImg, instagram: "https://www.instagram.com/skajush_manu?igsh=MXR1YzkwMXl0bGxiYg==" },
+  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", role: "Senpai", detail: "4° Dan", showInstagram: true, image: benniciImg, instagram: "https://www.instagram.com/xaendar?igsh=MXY3ZGZycml5bXQ1" },
+  { name: "Danilo Zaccarelli", katakana: "ダニーロ・ザッカレッリ", role: "Senpai — Presidente della Società", detail: "4° Dan", showInstagram: true, image: zaccarelliImg, instagram: "https://www.instagram.com/zaccarellidanilo?igsh=MXhpZWc2NDgxejU4dg==" },
+  { name: "Lorenzo Turrini", katakana: "ロレンツォ・トゥッリーニ", role: "Senpai", detail: "3° Dan", showInstagram: true, instagram: "https://www.instagram.com/turrinilorenzo31?igsh=MWVpYWdnNnBheWp2aw==" },
 ];
 
 const competitors = [
   { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false, image: arlettiImg },
-  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true, image: petrazImg },
-  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true, image: muscioImg },
-  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true, image: galantiImg },
-  { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "", showInstagram: true },
-  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true, image: benniciImg },
-  { name: "Francesca Carboni", katakana: "フランチェスカ・カルボーニ", grade: "3° Dan", results: "", showInstagram: true },
-  { name: "Giovanni Faraguti", katakana: "ジョヴァンニ・ファラグーティ", grade: "2° Dan", results: "", showInstagram: true, image: faragutiImg },
-  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "1° Dan", results: "", showInstagram: true, image: mazziImg },
+  { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true, image: petrazImg, raiseResults: true, instagram: "https://www.instagram.com/el_fachiro_sam_fuego?igsh=MWloZHF4amliOHQ0Zw==" },
+  { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true, image: muscioImg, raiseResults: true, instagram: "https://www.instagram.com/beatrice_msc?igsh=MTNvaGNpczd4cXhyaA==" },
+  { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "1° posto Campionati italiani kyu maschili 2026 🥇", showInstagram: true, raiseResults: true, instagram: "https://www.instagram.com/funkyfranky.fm?igsh=MThxMTVydTJ1d2VwZw==" },
+  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true, image: galantiImg, instagram: "https://www.instagram.com/__matteo_galanti__?igsh=MWxhejhjaTV4ZTJhYg==" },
+  { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true, image: benniciImg, instagram: "https://www.instagram.com/xaendar?igsh=MXY3ZGZycml5bXQ1" },
+  { name: "Francesca Carboni", katakana: "フランチェスカ・カルボーニ", grade: "3° Dan", results: "", showInstagram: true, instagram: "https://www.instagram.com/slumbercloth_?igsh=MWhkbThpZzhvZWg0ZQ==" },
+  { name: "Giovanni Faraguti", katakana: "ジョヴァンニ・ファラグーティ", grade: "2° Dan", results: "", showInstagram: true, image: faragutiImg, instagram: "https://www.instagram.com/megaforza?igsh=MTdxM3ZmNjg0M2I3NQ==" },
+  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "1° Dan", results: "", showInstagram: true, image: mazziImg, instagram: "https://www.instagram.com/ricmazzi?igsh=MWE1cXgwdHF0ZjBkbQ==" },
 ];
 
 export default function SenseiSection() {
@@ -119,7 +122,7 @@ export default function SenseiSection() {
                   <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-bold leading-tight text-primary">
                     {sensei.role}
                   </p>
-                  <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                  <p className={`flex ${sensei.raiseDetail ? "h-9 -translate-y-2" : "h-8"} items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground`}>
                     {sensei.detail}
                   </p>
                 </div>
@@ -139,7 +142,7 @@ export default function SenseiSection() {
                       </div>
                       {m.showInstagram && (
                         <a
-                          href="https://instagram.com/modenakendo"
+                          href={m.instagram || "https://instagram.com/modenakendo"}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="mt-2 text-white/70 hover:text-red-500/80 transition-colors"
@@ -224,7 +227,7 @@ export default function SenseiSection() {
                         </div>
                         {c.showInstagram && (
                           <a
-                            href="https://instagram.com/modenakendo"
+                            href={c.instagram || "https://instagram.com/modenakendo"}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="mt-2 text-white/70 hover:text-red-500/80 transition-colors"
@@ -253,7 +256,7 @@ export default function SenseiSection() {
                       <p className="flex h-6 items-start justify-center overflow-hidden whitespace-nowrap px-0 text-[13px] font-medium leading-tight text-primary">
                         {c.grade}
                       </p>
-                      <p className="flex h-8 items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground">
+                      <p className={`flex ${c.raiseResults ? "h-9 -translate-y-2" : "h-8"} items-start justify-center overflow-hidden whitespace-pre-line text-sm leading-tight text-muted-foreground`}>
                         {c.results}
                       </p>
                     </div>
