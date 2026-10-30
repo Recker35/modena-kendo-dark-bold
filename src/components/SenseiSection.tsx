@@ -34,12 +34,12 @@ const competitors = [
   { name: "Luca Arletti", katakana: "ルカ・アルレッティ", grade: "6° Dan", results: "", showInstagram: false, image: arlettiImg },
   { name: "Samuele Petraz", katakana: "サムエレ・ペトラズ", grade: "2° Dan", results: "3° posto Campionati italiani maschili 2026 🥉", showInstagram: true, image: petrazImg, raiseResults: true, instagram: "https://www.instagram.com/el_fachiro_sam_fuego?igsh=MWloZHF4amliOHQ0Zw==" },
   { name: "Beatrice Muscio", katakana: "ベアトリーチェ・ムーショ", grade: "2° Dan", results: "3° posto Campionati italiani femminili 2026 🥉", showInstagram: true, image: muscioImg, raiseResults: true, instagram: "https://www.instagram.com/beatrice_msc?igsh=MTNvaGNpczd4cXhyaA==" },
-  { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "2° Kyu", results: "1° posto Campionati italiani kyu maschili 2026 🥇", showInstagram: true, raiseResults: true, instagram: "https://www.instagram.com/funkyfranky.fm?igsh=MThxMTVydTJ1d2VwZw==" },
-  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "1° Dan", results: "", showInstagram: true, image: galantiImg, instagram: "https://www.instagram.com/__matteo_galanti__?igsh=MWxhejhjaTV4ZTJhYg==" },
+  { name: "Giorgio Ongaro", katakana: "ジョルジョ・オンガロ", grade: "1° Dan", results: "1° posto Campionati italiani kyu maschili 2026 🥇", showInstagram: true, raiseResults: true, instagram: "https://www.instagram.com/funkyfranky.fm?igsh=MThxMTVydTJ1d2VwZw==" },
+  { name: "Matteo Galanti", katakana: "マッテオ・ガランティ", grade: "2° Dan", results: "", showInstagram: true, image: galantiImg, instagram: "https://www.instagram.com/__matteo_galanti__?igsh=MWxhejhjaTV4ZTJhYg==" },
   { name: "Andrea Bennici", katakana: "アンドレア・ベンニチ", grade: "4° Dan", results: "", showInstagram: true, image: benniciImg, instagram: "https://www.instagram.com/xaendar?igsh=MXY3ZGZycml5bXQ1" },
   { name: "Francesca Carboni", katakana: "フランチェスカ・カルボーニ", grade: "3° Dan", results: "", showInstagram: true, instagram: "https://www.instagram.com/slumbercloth_?igsh=MWhkbThpZzhvZWg0ZQ==" },
   { name: "Giovanni Faraguti", katakana: "ジョヴァンニ・ファラグーティ", grade: "2° Dan", results: "", showInstagram: true, image: faragutiImg, instagram: "https://www.instagram.com/megaforza?igsh=MTdxM3ZmNjg0M2I3NQ==" },
-  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "1° Dan", results: "", showInstagram: true, image: mazziImg, instagram: "https://www.instagram.com/ricmazzi?igsh=MWE1cXgwdHF0ZjBkbQ==" },
+  { name: "Riccardo Mazzi", katakana: "リッカルド・マッツィ", grade: "2° Dan", results: "", showInstagram: true, image: mazziImg, instagram: "https://www.instagram.com/ricmazzi?igsh=MWE1cXgwdHF0ZjBkbQ==" },
 ];
 
 export default function SenseiSection() {
